@@ -95,7 +95,7 @@ public class CharacterMotor : MonoBehaviour
 		
 		// How much does the character jump out perpendicular to the surface on too steep surfaces?
 		// 0 means a fully vertical jump and 1 means fully perpendicular.
-		public float steepPerpAmount = 0.5f;
+		public float steepPerpAmount = 0.0f;//0.05f
 		
 		// For the next variables, [System.NonSerialized] tells Unity to not serialize the variable or show it in the inspector view.
 		// Very handy for organization!
