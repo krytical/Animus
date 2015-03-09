@@ -4,7 +4,8 @@ using System.Collections;
 public class followPlayer : MonoBehaviour {
 
 	//public GameObject player;
-	private Vector3 offset;
+	public float yoffset;
+	public float xoffset;
 	//public Rigidbody rb;
 
 	void Start(){
@@ -14,7 +15,7 @@ public class followPlayer : MonoBehaviour {
 
 	void FixedUpdate(){
 		GameObject player = GameObject.FindWithTag ("Player");
-		Vector3 temp = new Vector3(player.transform.position.x, player.transform.position.y + 3.0f, player.transform.position.z);
+		Vector3 temp = new Vector3(player.transform.position.x + xoffset, player.transform.position.y + yoffset, player.transform.position.z);
 		transform.position = temp;
 		Quaternion target = Quaternion.Euler(0,0,0); 
 		transform.rotation = Quaternion.Slerp (transform.rotation, target, Time.deltaTime);

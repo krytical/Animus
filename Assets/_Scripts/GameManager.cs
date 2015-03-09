@@ -3,11 +3,21 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 	SpawnSpot[] spawnSpots;
+	public HaloSpawnSpot haloSpawnSpot;
+	public GameObject haloOrb;
 	public GameObject orb;
+	public int numOfOrbs;
+	private float offsetHaloOrb;
 	// Use this for initialization
 	void Start () {
+		offsetHaloOrb = 0.0f;
 		spawnSpots = GameObject.FindObjectsOfType<SpawnSpot> ();
-		SpawnOrbs ();
+		int a = 0;
+		while (a < numOfOrbs) {
+			SpawnOrbs ();
+			a++;
+		}
+		SpawnHaloOrb (numOfOrbs);
 		Debug.Log ("Started");
 	}
 
@@ -21,5 +31,14 @@ public class GameManager : MonoBehaviour {
 		SpawnSpot orbSpawnSpot = spawnSpots [Random.Range (0, spawnSpots.Length)];
 		Debug.Log ("Created Orb");
 		orb = (GameObject)Instantiate (orb, orbSpawnSpot.transform.position, orbSpawnSpot.transform.rotation);
+
+	}
+
+	void SpawnHaloOrb(int howManyOrbs){
+		int a = 0;
+		while (a < howManyOrbs) {
+			haloOrb = (GameObject)Instantiate (haloOrb, haloSpawnSpot.transform.position, haloSpawnSpot.transform.rotation);
+			a++;
+		}
 	}
 }
