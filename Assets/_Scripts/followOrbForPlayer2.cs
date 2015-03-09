@@ -9,7 +9,8 @@ public class followOrbForPlayer2 : MonoBehaviour {
 		
 		
 		void Start(){
-			
+		Renderer rend = GetComponent<Renderer> ();
+		rend.enabled = true;
 		}
 		
 		void FixedUpdate(){

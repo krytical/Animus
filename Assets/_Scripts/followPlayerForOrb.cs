@@ -8,9 +8,10 @@ public class followPlayerForOrb : MonoBehaviour {
 	private float xoffset = -0.45f;
 	private float zoffset = -1.2f;
 
-	
-	void Start(){
 
+	void Start(){
+		Renderer rend = GetComponent<Renderer> ();
+		rend.enabled = true;
 	}
 	
 	void FixedUpdate(){

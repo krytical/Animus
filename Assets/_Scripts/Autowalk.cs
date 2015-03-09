@@ -16,7 +16,7 @@ public class Autowalk : MonoBehaviour {
 		RaycastHit hit;
 		bool isLookedAt = GetComponent<Collider>().Raycast(head.Gaze, out hit, Mathf.Infinity);
 		// if looking at object for 2 seconds, enable/disable autowalk
-		if (isLookedAt && Time.time>delay) { 
+		if ((isLookedAt && Time.time>delay) || (isLookedAt && Cardboard.SDK.CardboardTriggered)) { 
 			GameObject FPSController = GameObject.Find("Head");
 			FPSInputController autowalk = FPSController.GetComponent<FPSInputController>();
 			autowalk.checkAutoWalk = !autowalk.checkAutoWalk;
