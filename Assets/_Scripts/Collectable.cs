@@ -28,7 +28,7 @@ public class Collectable : MonoBehaviour {
 
 		if ((Cardboard.SDK.CardboardTriggered && isLookedAt) || (Time.time>delay && isLookedAt) ) {
 			// Do Stuff black if looked at for now
-			GetComponent<Renderer>().material.color = isLookedAt ? Color.black : Color.red;
+			//GetComponent<Renderer>().material.color = isLookedAt ? Color.black : Color.red;
 			orbs = GameObject.FindGameObjectsWithTag("HaloOrb");
 			if (orbs == null) {
 				Debug.LogError ("No Orbs");

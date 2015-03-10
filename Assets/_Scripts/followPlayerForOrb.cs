@@ -18,5 +18,6 @@ public class followPlayerForOrb : MonoBehaviour {
 		GameObject player = GameObject.FindWithTag ("Player");
 		Vector3 temp = new Vector3(player.transform.position.x + xoffset, player.transform.position.y + yoffset, player.transform.position.z +zoffset);
 		transform.position = temp;
+
 	}
 }
