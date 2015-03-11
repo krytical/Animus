@@ -39,6 +39,7 @@ public class triggerCube : MonoBehaviour {
 		// End piece
 		if (isEnd && prevPiece.isTriggered && startPiece.isTriggered) {
 			// find time for first piece / see if valid
+			GetComponent<Renderer> ().material.color =  Color.green;
 			Destroy (parentObjectToDestroy);
 		}
 

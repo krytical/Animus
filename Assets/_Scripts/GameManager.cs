@@ -3,7 +3,6 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 	SpawnSpot[] spawnSpots;
-	public HaloSpawnSpot haloSpawnSpot;
 	public GameObject haloOrb;
 	public GameObject orb;
 	public int numOfOrbs;
