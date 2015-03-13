@@ -3,6 +3,7 @@ using System.Collections;
 
 [RequireComponent(typeof(Collider))]
 public class Collectable : MonoBehaviour {
+	public float howLongToLook;
 
 	private CardboardHead head;
 	private Vector3 startingPosition;
@@ -23,7 +24,7 @@ public class Collectable : MonoBehaviour {
 		GetComponent<Renderer>().material.color = isLookedAt ? Color.green : Color.red;
 
 		if (!isLookedAt) {
-			delay = Time.time + 1.5f;
+			delay = Time.time + howLongToLook;
 		}
 
 		if ((Cardboard.SDK.CardboardTriggered && isLookedAt) || (Time.time>delay && isLookedAt) ) {
@@ -34,8 +35,8 @@ public class Collectable : MonoBehaviour {
 				Debug.LogError ("No Orbs");
 				return;
 			}
-			Destroy(orbs [Random.Range (0, orbs.Length)]);
-			Destroy (this.gameObject);
+			//Destroy(orbs [Random.Range (0, orbs.Length)]);
+			//Destroy (this.gameObject);
 		}
 	}
 }
