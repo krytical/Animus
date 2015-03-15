@@ -39,7 +39,9 @@ public class BlackTrigger : MonoBehaviour {
 		if (isEnd && prevPiece.isTriggered && startPiece.isTriggered) {
 			// find time for first piece / see if valid
 			//GetComponent<Renderer> ().material.color =  Color.green;
-			Destroy (parentObjectToDestroy);
+			GameObject player = GameObject.FindWithTag ("Player");
+			GameObject playerTelePos = GameObject.FindWithTag("TeleReturnPos");
+			player.transform.position = playerTelePos.transform.position;
 		}
 		
 		

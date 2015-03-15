@@ -6,14 +6,14 @@ public class Collectable : MonoBehaviour {
 	public float howLongToLook;
 
 	private CardboardHead head;
-	private Vector3 startingPosition;
+
 	private float delay = 0.0f; 	
 	Object[] orbs;
  
 	// Use this for initialization
 	void Start () {
 		head = Camera.main.GetComponent<StereoController>().Head;
-		startingPosition = transform.localPosition;
+
 		orbs = GameObject.FindGameObjectsWithTag("HaloOrb");
 	}
 	
