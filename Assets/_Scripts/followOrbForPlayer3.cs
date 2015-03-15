@@ -4,8 +4,8 @@ using System.Collections;
 public class followOrbForPlayer3 : MonoBehaviour {
 
 	public float yoffset;
-	private float xoffset = 0.45f;
-	private float zoffset = -1.2f;
+	private float xoffset = 0.75f;
+	private float zoffset = -2.0f;
 	
 	
 	void Start(){

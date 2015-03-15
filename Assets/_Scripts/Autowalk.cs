@@ -2,7 +2,9 @@
 using System.Collections;
 
 public class Autowalk : MonoBehaviour {
-	
+	public float amountOfTimeToLook;
+
+
 	private CardboardHead head;
 	private Vector3 startingPosition;
 	private float delay = 0.0f; 
@@ -20,7 +22,7 @@ public class Autowalk : MonoBehaviour {
 			GameObject FPSController = GameObject.Find("Head");
 			FPSInputController autowalk = FPSController.GetComponent<FPSInputController>();
 			autowalk.checkAutoWalk = !autowalk.checkAutoWalk;
-			delay = Time.time + 2.0f;
+			delay = Time.time + amountOfTimeToLook;
 		}
 		// currently looking at object
 		else if (isLookedAt) { 
@@ -29,7 +31,7 @@ public class Autowalk : MonoBehaviour {
 		// not looking at object
 		else if (!isLookedAt) { 
 			GetComponent<Renderer>().material.color = Color.red; 
-			delay = Time.time + 2.0f; 
+			delay = Time.time + amountOfTimeToLook; 
 		}
 	}
 	
