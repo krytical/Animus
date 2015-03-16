@@ -9,6 +9,7 @@ public class Collectable : MonoBehaviour {
 
 	private float delay = 0.0f; 	
 	Object[] orbs;
+	private bool alreadyDidOne = false;
  
 	// Use this for initialization
 	void Start () {
@@ -35,8 +36,11 @@ public class Collectable : MonoBehaviour {
 				Debug.LogError ("No Orbs");
 				return;
 			}
-			//Destroy(orbs [Random.Range (0, orbs.Length)]);
-			//Destroy (this.gameObject);
+			if(!alreadyDidOne){
+				Destroy(orbs [Random.Range (0, orbs.Length)]);
+				//Destroy (this.gameObject);
+				alreadyDidOne = true;
+			}
 		}
 	}
 }
