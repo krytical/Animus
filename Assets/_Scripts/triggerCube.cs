@@ -41,6 +41,7 @@ public class triggerCube : MonoBehaviour {
 			// find time for first piece / see if valid
 			GetComponent<Renderer> ().material.color =  Color.green;
 			Destroy (parentObjectToDestroy);
+			Destroy (this.gameObject, 3.0f);
 		}
 
 	

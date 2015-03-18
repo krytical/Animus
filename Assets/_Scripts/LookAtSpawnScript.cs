@@ -30,6 +30,9 @@ public class LookAtSpawnScript : MonoBehaviour {
 		}
 		if (!isLookedAt) {
 			delay = Time.time + 1.0f;
+			if(objSpawned != null){
+				Destroy(objSpawned, 1.0f);
+			}
 		}
 	
 	}
