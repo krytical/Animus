@@ -7,6 +7,7 @@ public class lookAtPlayer : MonoBehaviour {
 	//public GameObject cameraToLookAt;
 	// Use this for initialization
 	//public float yoffset;
+	public float howHigh;
 	void Start () {
 	
 	}
@@ -21,7 +22,7 @@ public class lookAtPlayer : MonoBehaviour {
 		transform.LookAt( Camera.main.transform.position - v );
 		
 		transform.rotation =(Camera.main.transform.rotation);
-		if (transform.position.y <= 2.0f) {
+		if (transform.position.y <= howHigh) {
 			transform.position = new Vector3 (transform.position.x, transform.position.y + 1.0f, transform.position.z);
 		}
 		

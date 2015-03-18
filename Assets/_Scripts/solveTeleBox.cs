@@ -1,28 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BlackTrigger : MonoBehaviour {
+public class solveTeleBox : MonoBehaviour {
+
 	public bool isStart; // 1 if start piece
 	public bool isEnd; // 1 if end piece
-	public BlackTrigger prevPiece; // previous piece
-	public BlackTrigger startPiece;
+	public solveTeleBox linkedEndPiece;
+	public solveTeleBox prevPiece; // previous piece
+	public solveTeleBox startPiece;
 	public float timeToSolve;
-	public GameObject parentObjectToDestroy;
 
-	//public bool isSolved;
+	
 	public float delay = 0.0f;
 	private bool isTriggered; // 1 if it is triggered (looked at)
 	private CardboardHead head;
-
 	
 	
 	// Use this for initialization
 	void Start () {
 		head = Camera.main.GetComponent<StereoController>().Head;
-		GetComponent<Renderer> ().material.color = Color.black;
+		GetComponent<Renderer> ().material.color = Color.red;
 		isTriggered = false;
 		delay = 0.0f;
-		//isSolved = false;
 		
 	}
 	
@@ -34,18 +33,19 @@ public class BlackTrigger : MonoBehaviour {
 		if (!isStart && !isEnd) {
 			if (isLookedAt && prevPiece.isTriggered) {
 				isTriggered = true;
-				//GetComponent<Renderer> ().material.color = isLookedAt ? Color.green : Color.red;
+				GetComponent<Renderer> ().material.color = isLookedAt ? Color.green : Color.red;
 			}
 		}
 		
 		// End piece
 		if (isEnd && prevPiece.isTriggered && startPiece.isTriggered) {
 			// find time for first piece / see if valid
-			//GetComponent<Renderer> ().material.color =  Color.green;
-			GameObject player = GameObject.FindWithTag ("Player");
-			GameObject playerTelePos = GameObject.FindWithTag("TeleReturnPos");
-			player.transform.position = playerTelePos.transform.position;
-			//isSolved = true;
+			GetComponent<Renderer> ().material.color =  Color.green;
+			if(linkedEndPiece.isEnd && linkedEndPiece.prevPiece.isTriggered && linkedEndPiece.startPiece.isTriggered){
+				GameObject player = GameObject.FindWithTag ("Player");
+				GameObject playerTelePos = GameObject.FindWithTag ("TeleReturnPos");
+				player.transform.position = playerTelePos.transform.position;
+			}
 		}
 		
 		
@@ -53,12 +53,12 @@ public class BlackTrigger : MonoBehaviour {
 		if (isStart) {
 			if(isLookedAt){
 				isTriggered = true;
-				//GetComponent<Renderer> ().material.color = isLookedAt ? Color.green : Color.red;
+				GetComponent<Renderer> ().material.color = isLookedAt ? Color.green : Color.red;
 				delay = Time.time + timeToSolve;
 			}
 			if(Time.time > delay){
 				isTriggered = false;
-				//GetComponent<Renderer> ().material.color = Color.red;
+				GetComponent<Renderer> ().material.color = Color.red;
 			}
 		}
 		
@@ -66,7 +66,7 @@ public class BlackTrigger : MonoBehaviour {
 		if (!isStart) {
 			if (Time.time > startPiece.delay) {
 				isTriggered = false;
-				//GetComponent<Renderer> ().material.color = Color.red;
+				GetComponent<Renderer> ().material.color = Color.red;
 			}
 		}
 	}
