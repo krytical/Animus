@@ -27,6 +27,9 @@ public class Shot : MonoBehaviour {
 			GameObject playerTelePos = GameObject.FindWithTag("TeleReturnPos");
 			playerTelePos.transform.position = player.transform.position;
 			player.transform.position = destination.transform.position;
+			GameObject FPSController = GameObject.Find("Head");
+			FPSInputController autowalk = FPSController.GetComponent<FPSInputController>();
+			autowalk.checkAutoWalk = !autowalk.checkAutoWalk;
 		}
 	}
 }
