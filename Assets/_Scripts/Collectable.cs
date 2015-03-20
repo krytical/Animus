@@ -8,14 +8,13 @@ public class Collectable : MonoBehaviour {
 	private CardboardHead head;
 
 	private float delay = 0.0f; 	
-	Object[] orbs;
+	public GameObject haloOrbToDestroy;
 	private bool alreadyDidOne = false;
  
 	// Use this for initialization
 	void Start () {
 		head = Camera.main.GetComponent<StereoController>().Head;
 
-		orbs = GameObject.FindGameObjectsWithTag("HaloOrb");
 	}
 	
 	// Update is called once per frame
@@ -31,16 +30,8 @@ public class Collectable : MonoBehaviour {
 		if ((Cardboard.SDK.CardboardTriggered && isLookedAt) || (Time.time>delay && isLookedAt) ) {
 			// Do Stuff black if looked at for now
 			//GetComponent<Renderer>().material.color = isLookedAt ? Color.black : Color.red;
-			orbs = GameObject.FindGameObjectsWithTag("HaloOrb");
-			if (orbs.Length == 0) {
-				Debug.LogError ("No Orbs");
-				return;
-			}
-			if(!alreadyDidOne){
-				Destroy(orbs [Random.Range (0, orbs.Length)]);
-				Destroy (this.gameObject);
-				alreadyDidOne = true;
-			}
+			Destroy (haloOrbToDestroy, 1);	
+			Destroy (this.gameObject);
 		}
 	}
 }
