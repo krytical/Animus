@@ -4,7 +4,7 @@ using System.Collections;
 public class LookAtSpawnScript : MonoBehaviour {
 	
 	public GameObject objToSpawn;
-
+	
 	private float delay = 0.0f;
 	private CardboardHead head;
 	private GameObject objSpawned;
@@ -22,14 +22,15 @@ public class LookAtSpawnScript : MonoBehaviour {
 			//Spawn Object
 			objSpawned = (GameObject)Instantiate(objToSpawn, transform.position, transform.rotation);
 			spawned = true;
-
+			
 		}
 		if (!isLookedAt && spawned) {
 			spawned = false;
+			Destroy (objSpawned);
 		}
 		if (!isLookedAt) {
 			delay = Time.time + 1.0f;
 		}
-	
+		
 	}
 }

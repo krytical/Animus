@@ -4,9 +4,9 @@ using System.Collections;
 public class Shot : MonoBehaviour {
 	public float speed;
 	public float timeToDestroy;
-
+	
 	private float startTime;
-
+	
 	// Use this for initialization
 	void Start () {
 		startTime = Time.time;
@@ -19,7 +19,7 @@ public class Shot : MonoBehaviour {
 			Destroy(this.gameObject);
 		}
 	}
-
+	
 	void OnTriggerEnter(Collider other){
 		if (other.GetComponent<Collider>().gameObject.tag == "Player") {
 			GameObject player = GameObject.FindWithTag ("Player");
@@ -29,7 +29,9 @@ public class Shot : MonoBehaviour {
 			player.transform.position = destination.transform.position;
 			GameObject FPSController = GameObject.Find("Head");
 			FPSInputController autowalk = FPSController.GetComponent<FPSInputController>();
-			autowalk.checkAutoWalk = !autowalk.checkAutoWalk;
+			
+			autowalk.checkAutoWalk = autowalk.checkAutoWalk ? !autowalk.checkAutoWalk : autowalk.checkAutoWalk;
+			
 		}
 	}
 }
