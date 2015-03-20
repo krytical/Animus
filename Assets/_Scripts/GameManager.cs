@@ -12,12 +12,12 @@ public class GameManager : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		spawnSpots = GameObject.FindObjectsOfType<SpawnSpot> ();
+		/*spawnSpots = GameObject.FindObjectsOfType<SpawnSpot> ();
 		int a = 0;
 		while (a < numOfOrbs) {
 			SpawnOrbs ();
 			a++;
-		}
+		}*/
 		//SpawnHaloOrb (numOfOrbs);
 		Debug.Log ("Started");
 
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 
-	void SpawnOrbs() {
+	/*void SpawnOrbs() {
 		if (spawnSpots == null) {
 			Debug.LogError ("No Spawn Spots");
 			return;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour {
 		Debug.Log ("Created Orb");
 		orb = (GameObject)Instantiate (orb, orbSpawnSpot.transform.position, orbSpawnSpot.transform.rotation);
 
-	}
+	}*/
 
 	IEnumerator SpawnShooter(){
 

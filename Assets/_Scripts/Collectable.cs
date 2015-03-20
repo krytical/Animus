@@ -32,13 +32,13 @@ public class Collectable : MonoBehaviour {
 			// Do Stuff black if looked at for now
 			//GetComponent<Renderer>().material.color = isLookedAt ? Color.black : Color.red;
 			orbs = GameObject.FindGameObjectsWithTag("HaloOrb");
-			if (orbs == null) {
+			if (orbs.Length == 0) {
 				Debug.LogError ("No Orbs");
 				return;
 			}
 			if(!alreadyDidOne){
 				Destroy(orbs [Random.Range (0, orbs.Length)]);
-				//Destroy (this.gameObject);
+				Destroy (this.gameObject);
 				alreadyDidOne = true;
 			}
 		}
