@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{22FA4C11-9625-0018-4AF8-64E2A8D9B4D1}") = "Animus", "Assembly-CSharp-firstpass.csproj", "{BF6F5E90-AAC6-539E-5AF0-DB5CD78DC21D}"
+EndProject
 Project("{22FA4C11-9625-0018-4AF8-64E2A8D9B4D1}") = "Animus", "Assembly-CSharp.csproj", "{B5A17E8F-9923-0FD9-F677-71755FF452AF}"
 EndProject
 Project("{22FA4C11-9625-0018-4AF8-64E2A8D9B4D1}") = "Animus", "Assembly-CSharp-Editor.csproj", "{5EB629C2-00FD-C00B-0323-2A08DB088327}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF6F5E90-AAC6-539E-5AF0-DB5CD78DC21D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF6F5E90-AAC6-539E-5AF0-DB5CD78DC21D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF6F5E90-AAC6-539E-5AF0-DB5CD78DC21D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF6F5E90-AAC6-539E-5AF0-DB5CD78DC21D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B5A17E8F-9923-0FD9-F677-71755FF452AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B5A17E8F-9923-0FD9-F677-71755FF452AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5A17E8F-9923-0FD9-F677-71755FF452AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																						GlobalSection(MonoDevelopProperties) = preSolution
+																									GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
