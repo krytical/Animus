@@ -45,6 +45,7 @@ public class solveTeleBox : MonoBehaviour {
 				GameObject player = GameObject.FindWithTag ("Player");
 				GameObject playerTelePos = GameObject.FindWithTag ("TeleReturnPos");
 				player.transform.position = playerTelePos.transform.position;
+				GameObject.Find("Head").GetComponent<CharacterMotor>().enabled = true;
 				GameObject.Find("Birds").GetComponent<AudioSource>().enabled = true;
 			}
 		}

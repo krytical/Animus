@@ -28,6 +28,7 @@ public class Shot : MonoBehaviour {
 			playerTelePos.transform.position = player.transform.position;
 			player.transform.position = destination.transform.position;
 			GameObject.Find("Birds").GetComponent<AudioSource>().enabled = false;
+			GameObject.Find("Head").GetComponent<CharacterMotor>().enabled = false;
 			GameObject FPSController = GameObject.Find("Head");
 			FPSInputController autowalk = FPSController.GetComponent<FPSInputController>();
 			
