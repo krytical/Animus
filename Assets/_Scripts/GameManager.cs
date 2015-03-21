@@ -9,6 +9,12 @@ public class GameManager : MonoBehaviour {
 	private GameObject shooterInstance;
 	public GameObject shooterPrefab;
 	public float timeToSpawnShooter;
+
+	public GameObject Orb0;
+	public GameObject Orb1;
+	public GameObject Orb2;
+	public GameObject Orb3;
+	public GameObject endGame;
 	
 	// Use this for initialization
 	void Start () {
@@ -24,6 +30,17 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine(SpawnShooter());
 	}
 
+	void Update(){
+		bool isReady = (Orb0 == null) && (Orb1 == null) && (Orb2 == null) && (Orb3 == null);
+		//tele to endgame
+		if (isReady) {
+			GameObject player = GameObject.FindWithTag ("Player");
+			GameObject destination = GameObject.FindWithTag ("EndGame");
+			GameObject playerTelePos = GameObject.FindWithTag("TeleReturnPos");
+			playerTelePos.transform.position = player.transform.position;
+			player.transform.position = destination.transform.position;
+		}
+	}
 
 	/*void SpawnOrbs() {
 		if (spawnSpots == null) {
