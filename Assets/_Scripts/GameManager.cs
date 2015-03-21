@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 			a++;
 		}*/
 		//SpawnHaloOrb (numOfOrbs);
-		Debug.Log ("Started");
+		//Debug.Log ("Started");
 
 		StartCoroutine(SpawnShooter());
 	}

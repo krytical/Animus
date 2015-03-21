@@ -32,7 +32,7 @@ public class MainMenu : MonoBehaviour {
 			//GetComponent<Renderer>().material.color = isLookedAt ? Color.black : Color.red;
 			//startButton = GameObject.FindGameObjectWithTag("Start");
 			if (Cardboard.SDK.CardboardTriggered && isLookedAt || Time.time > delay && isLookedAt){
-				Debug.Log("Load level Demo");
+				//Debug.Log("Load level Demo");
 				Application.LoadLevel("LevelDemo");
 			}
 		}

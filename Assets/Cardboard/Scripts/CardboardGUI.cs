@@ -79,7 +79,7 @@ public class CardboardGUI : MonoBehaviour {
 
   void Awake() {
     if (!SystemInfo.supportsRenderTextures) {
-      Debug.LogWarning("CardboardGUI disabled.  RenderTextures are not supported, either due to license or platform.");
+      //Debug.LogWarning("CardboardGUI disabled.  RenderTextures are not supported, either due to license or platform.");
       enabled = false;
     }
   }

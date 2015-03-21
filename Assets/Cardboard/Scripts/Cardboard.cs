@@ -53,7 +53,7 @@ public class Cardboard : MonoBehaviour {
   public static Cardboard SDK {
     get {
       if (sdk == null) {
-        Debug.Log("Creating Cardboard object");
+        //Debug.Log("Creating Cardboard object");
         var go = new GameObject("Cardboard");
         sdk = go.AddComponent<Cardboard>();
         go.transform.localPosition = Vector3.zero;
@@ -272,8 +272,8 @@ public class Cardboard : MonoBehaviour {
                   isAtLeastUnity4_5 = true;
               }
           } catch {
-              Debug.LogWarning("Unable to determine Unity version from: "
-                      + Application.unityVersion);
+              //Debug.LogWarning("Unable to determine Unity version from: "
+                     // + Application.unityVersion);
           }
           supportsAndroidRenderEvent = isAtLeastUnity4_5 && isAndroid;
       }
@@ -308,7 +308,7 @@ public class Cardboard : MonoBehaviour {
           sdk = this;
       }
       if (sdk != this) {
-          Debug.LogWarning("Cardboard SDK object should be a singleton.");
+         // Debug.LogWarning("Cardboard SDK object should be a singleton.");
           enabled = false;
           return;
       }
@@ -381,7 +381,7 @@ public class Cardboard : MonoBehaviour {
 
   public void CreateStereoScreen(int x, int y) {
     if (config.canApplyDistortionCorrection()) {
-      Debug.Log("Creating new cardboard screen texture.");
+     // Debug.Log("Creating new cardboard screen texture.");
       if (stereoScreen != null) {
         stereoScreen.Release();
       }
@@ -392,8 +392,8 @@ public class Cardboard : MonoBehaviour {
       stereoScreen = null;
       if (!Application.isEditor) {
         nativeDistortionCorrection = false;
-        Debug.LogWarning("Lens distortion-correction disabled. Causes: [" +
-                         config.getDistortionCorrectionDiagnostic() + "]");
+       // Debug.LogWarning("Lens distortion-correction disabled. Causes: [" +
+                  //       config.getDistortionCorrectionDiagnostic() + "]");
       }
     }
   }
