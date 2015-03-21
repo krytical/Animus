@@ -25,8 +25,10 @@ public class FPSInputController : MonoBehaviour
 		Vector3 directionVector;
 		if (!checkAutoWalk) { 
 			directionVector = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			GameObject.Find("Head").GetComponent<AudioSource>().enabled = false;
 		} else { 
 			directionVector = new Vector3(0, 0, 1);
+			GameObject.Find("Head").GetComponent<AudioSource>().enabled = true;
 		}
 
 		if (directionVector != Vector3.zero)
